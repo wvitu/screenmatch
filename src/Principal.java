@@ -1,3 +1,4 @@
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -8,6 +9,7 @@ public class Principal {
         meuFilme.setAnoDeLancamento(2001);
         meuFilme.setDuracaoEmMinutos(152);
         meuFilme.setDiretor("Chris Columbus");
+        System.out.println("O filme tem a duração de: " + meuFilme.getDuracaoEmMinutos());
 
 
         meuFilme.exibeFichaTecnica();
@@ -25,6 +27,19 @@ public class Principal {
         theBigBangTheory.setTemporadas(10);
         theBigBangTheory.setEpisodiosPorTemporada(10);
         theBigBangTheory.setMinutosPorEpisodio(24);
+        System.out.println("Você vai levar " + theBigBangTheory.getDuracaoEmMinutos() + " minutos para maratonar esta série");
+
+
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Animais Fantásticos e onde Habitam");
+        outroFilme.setAnoDeLancamento(2016);
+        outroFilme.setDuracaoEmMinutos(132);
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(outroFilme);
+        calculadora.inclui(theBigBangTheory);
+        System.out.println(calculadora.getTempoTotal());
 
     }
 }
