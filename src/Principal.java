@@ -1,4 +1,5 @@
 import br.com.alura.screenmatch.modelos.Filme;
+import br.com.alura.screenmatch.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
@@ -16,6 +17,14 @@ public class Principal {
         meuFilme.avalia(8.75);
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println("A média de avaliações deste filme é: " + meuFilme.retornaMedia());
+
+        Serie theBigBangTheory = new Serie();
+        theBigBangTheory.setNome("The Big Bang Theory");
+        theBigBangTheory.setAnoDeLancamento(2007);
+        theBigBangTheory.exibeFichaTecnica();
+        theBigBangTheory.setTemporadas(10);
+        theBigBangTheory.setEpisodiosPorTemporada(10);
+        theBigBangTheory.setMinutosPorEpisodio(24);
 
     }
 }
