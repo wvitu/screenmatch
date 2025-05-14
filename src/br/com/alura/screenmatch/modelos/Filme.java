@@ -1,6 +1,8 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Filme extends Titulo {
+import br.com.alura.screenmatch.calculos.Classificavel;
+
+public class Filme extends Titulo implements Classificavel {
     private boolean emCartaz;
 
     public boolean getEmCartaz() {
@@ -9,5 +11,10 @@ public class Filme extends Titulo {
 
     public void setEmCartaz(boolean emCartaz) {
         this.emCartaz = emCartaz;
+    }
+
+    @Override
+    public int getClassificacao() {
+        return (int) retornaMedia() / 2;
     }
 }
